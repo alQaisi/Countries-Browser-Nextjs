@@ -26,7 +26,7 @@ function CountriesContainer({countries}){
 
     return (
         <Fragment>
-            <CountriesContainerElem> { items } </CountriesContainerElem>;
+            <CountriesContainerElem> { items } </CountriesContainerElem>
             { (searchText==="" && itemsCount<countries.length) && <LoadMore className={theme} onClick={loadMoreCountries}>Load More</LoadMore> }
         </Fragment>
     );

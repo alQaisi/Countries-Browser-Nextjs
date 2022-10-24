@@ -4,14 +4,15 @@ const darkStyles=css`
     box-shadow:none;
     background:hsl(209, 23%, 22%);
     color:#ddd;
+    :hover{
+        background:#3e5263;
+    }
 `;
 
 export const CountryImage=styled.img`
     width:340px;
     height:200px;
     object-fit:cover;
-    width:340px;
-    height: 200px;
     border-top-left-radius:8px;
     border-top-right-radius:8px;    
 `;
@@ -36,20 +37,18 @@ export const CountryItem=styled.a`
     -moz-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
     box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
     border-radius:8px;
-    transition: transform .6s ease-in-out;
-    transition: flex-grow 1000ms linear;
+    transition: all .6s ease-in-out;
     cursor: pointer; 
     overflow: hidden;
+    transform: scale(0);
     &:hover{
-        transform: scale(1.1); 
+        background-color: #ddd;
     }
     ${({dark})=>dark==="dark" && darkStyles}
-    transform: scale(0);
     @keyframes initialEffect {
         from{
             transform: scale(0);
         }to{
-            
             transform: scale(1);
         }
     }

@@ -1,6 +1,4 @@
-import Link from "next/link";
 import Head from "next/head";
-import Router from "next/router";
 import { Fragment,useEffect,useContext } from "react";
 import alpha3codes from "./alpha3codes.json";
 import { useRouter } from 'next/router'
