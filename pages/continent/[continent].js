@@ -38,7 +38,7 @@ function Continent({data,continent}){
             <Head>
                 <title>{ continent }</title>
             </Head>
-            <CountriesContainer searchText={searchText} countries={data}/>
+            <CountriesContainer countries={data}/>
         </Fragment>
     );
 }

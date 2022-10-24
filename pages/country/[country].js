@@ -11,7 +11,7 @@ import {
     BorderButton,BorderButtonContainer,
     CountryCont,Info1,Info2,
     CountryPageContainer
-} from './countryPage.styles';
+} from '../../pagesStyles/countryPage.styles.jsx';
 
 export async function getStaticPaths(){
 

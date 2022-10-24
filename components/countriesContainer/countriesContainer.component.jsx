@@ -18,7 +18,6 @@ function CountriesContainer({countries}){
         setCurrentPage(newPage);
         setItemsCount(newItemCount);
     }
-    console.log(searchText);
     const items=Children.toArray(Object.values(countries.slice(0,searchText!==""?300:pageSize*currentPage)).filter(country=>(
         country.name.toLowerCase().includes(searchText || "")
     )).map(country=>(
