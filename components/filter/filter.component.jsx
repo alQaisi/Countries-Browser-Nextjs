@@ -1,4 +1,4 @@
-import SearchBox from './searchbox/searchbox.component';
+import SearchBox from './Searchbox/searchbox.component';
 import RegionSelector from './regionSelector/regionSelector.component';
 import { FilterContainer } from './filter.styles';
 
