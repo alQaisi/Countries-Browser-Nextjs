@@ -27,7 +27,7 @@ export async function getStaticProps({params:{continent}}){
 }
 
 function Continent({data,continent}){
-    const {setContinent,setVisited}=useFilterContext();
+    const {setContinent,searchText,setSearchText,setVisited}=useFilterContext();
     useEffect(()=>{
         setVisited(true);
         setContinent(continent);
@@ -38,7 +38,7 @@ function Continent({data,continent}){
             <Head>
                 <title>{ continent }</title>
             </Head>
-            <CountriesContainer countries={data}/>
+            <CountriesContainer searchText={searchText} countries={data}/>
         </Fragment>
     );
 }

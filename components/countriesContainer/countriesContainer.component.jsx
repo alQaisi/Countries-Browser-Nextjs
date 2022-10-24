@@ -3,12 +3,11 @@ import Country from '../country/country.component';
 import { CountriesContainerElem,LoadMore } from './countriesContainer.styles.jsx';
 import { useThemeContext } from '../../context/theme.context';
 
-function CountriesContainer({countries}){
+function CountriesContainer({countries,searchText}){
     const { theme }=useThemeContext();
     const [pageSize,setPageSize]=useState(30);
     const [currentPage,setCurrentPage]=useState(1);
     const [itemsCount,setItemsCount]=useState(countries.slice(0,pageSize*currentPage).length);
-    const {region,searchText}={ region:"",searchText:"" };
     
     function loadMoreCountries(){
         const newPage=currentPage+1;
@@ -18,7 +17,7 @@ function CountriesContainer({countries}){
     }
 
     const items=Children.toArray(Object.values(countries.slice(0,pageSize*currentPage)).filter(country=>(
-        country.region.includes(region)&&country.name.toLowerCase().includes(searchText)
+        country.name.toLowerCase().includes(searchText)
     )).map(country=>(
         <Country {...country} theme={theme}/>
     )));

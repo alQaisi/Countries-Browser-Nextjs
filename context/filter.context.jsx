@@ -10,10 +10,12 @@ export function FilterProvider({children}){
     const [searchText,setSearchText]=useState("");
 
     useEffect(()=>{
+        setSearchText("")
         if(!visited && continent){
             router.push(`/continent/${continent}`)
         }
     },[continent]);
+
 
     const value={searchText,setSearchText,continent,setContinent,setVisited};
 
