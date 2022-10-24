@@ -2,6 +2,7 @@ import {SearchBoxElem,SearchBoxInput,SearchIcon} from '../filter.styles'
 
 function SearchBox({theme,searchText,setSearchText}){
     function changeText({target:{value}}){
+        console.log(searchText)
         setSearchText(value);
     }
     return(
