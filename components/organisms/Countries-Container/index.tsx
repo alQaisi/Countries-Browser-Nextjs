@@ -19,7 +19,7 @@ const CountriesContainer:React.FC<ContainerProps>=({countries})=>{
         .map(country=><Card country={country} theme={theme}/>))
     
     return(
-        <div className={cls(styles.container)}>
+        <div id="countries-container" className={cls(styles.container)}>
             {cards}
         </div>
     );

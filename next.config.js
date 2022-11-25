@@ -11,6 +11,9 @@ const withPWA = require('next-pwa')({
 })
 
 module.exports = withPWA({
+  experimental: {
+    scrollRestoration: true,
+  },
   images:{
     domains:["upload.wikimedia.org","flagcdn.com"]
   },

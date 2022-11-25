@@ -4,8 +4,6 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Countries Browser Web Application"

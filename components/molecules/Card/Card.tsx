@@ -5,21 +5,17 @@ import { cls } from "../../../lib/cls";
 import Link from "next/link";
 import styles from "./Card.module.scss"
 import { motion } from "framer-motion";
+
 type CardProps={
     country:Country
     theme:string
 }
 
-const item = {
-    hidden: { scale:0},
-    show: { scale:1, transition:{ease:"easeInOut",duration:.5}  }
-  }
-
 const Card:React.FC<CardProps>=({country,theme})=>{
     const { flag,name,population,region,capital,alpha3Code}=country;
     return(
         <Link scroll={false} className={styles.LinkWrapper} href={`/country/${alpha3Code}`}>
-            <motion.div initial="hidden" whileInView="show" viewport={{once:true}} variants={item} whileHover={{scale: 1.125,transition: { duration: .5 },}} whileTap={{ scale: 0.9 }} key={name} className={cls(styles.card,{[styles.dark]:theme==="dark"})}>
+            <motion.div whileHover={{scale: 1.125,transition: { duration: .5 },}} whileTap={{ scale: 0.9 }} key={name} className={cls(styles.card,{[styles.dark]:theme==="dark"})}>
                 <Flag className={styles.CountryImage} src={flag} alt={name}/>
                 <CardInfo className={styles.InfoContainer} name={name}>
                     <p>{"Population:"+population}</p>
