@@ -1,0 +1,12 @@
+.container{
+    width:100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.loader{
+    all: unset;
+    margin: auto 25px auto;
+    display: block !important;
+}

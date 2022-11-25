@@ -1,0 +1,29 @@
+.header{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size:1.2rem;
+    border:none;
+    outline:none;
+    background:transparent;
+    cursor: pointer;
+    @media screen and (max-width:650px) {
+        font-size:1rem;
+    }
+}
+.border{
+    cursor: pointer;
+    border:none;
+    outline:none;
+    background:transparent;
+    -webkit-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    -moz-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    font-size:1rem;
+    border-radius:5px;
+    padding:7px 20px;
+    @media screen and (max-width:650px) {
+        font-size:.8rem;
+    }
+    @media screen and (max-width:575px) {
+        font-size:.7rem;
+    }
+}

@@ -1,0 +1,23 @@
+.info{
+    p{
+        font-weight:800;
+        font-size:1.5rem;
+    }
+    span{
+        font-weight:normal;
+    }
+    &.first{
+        margin-right:50px;
+    }
+    &.second{
+        margin-left:50px;
+    }
+    @media screen and (max-width:1370px) {
+        & p{
+            font-size:1rem;
+        }
+    }
+    @media screen and (max-width:700px) {
+        margin: 0 !important;
+    }
+}

@@ -1,0 +1,22 @@
+.flag{
+    all: unset !important;
+    height: auto !important;
+    width: 550px !important;
+    object-fit: unset !important;
+
+    @media screen and (max-width:1370px){
+        width: 425px !important;
+    }
+    @media screen and (max-width:1130px){
+        width: 525px !important;
+    }
+    @media screen and (max-width:700px){
+        width: 450px !important;
+    }
+    @media screen and (max-width:575px){
+        width: 300px !important;
+    }
+    @media screen and (max-width:360px){
+        width: 250px !important;
+    }
+}

@@ -1,0 +1,107 @@
+.themeToggle{
+    & button{
+        cursor: pointer;
+        font-weight:lighter;
+        outline:none;
+        border:none;
+        background:rgb(0 0 0 /0);
+        font-size:20px;
+        margin-bottom:5px;
+        margin-right:5px;
+    }
+    svg{
+        position: relative;
+        top:2px;
+        &:first-of-type{
+            display: initial;
+        }
+        &:last-of-type{
+            display: none;
+        }
+    }
+    display:flex;
+    margin-top:7.5px;
+    font-size:1.125rem;
+    margin-right:75px;
+    font-weight:400;
+    cursor: pointer;
+}
+
+.logo{
+    font-weight:800;
+    font-size:1.5rem;
+    margin-left:75px;
+    margin-top:20px;
+}
+
+@mixin darkNavbar{
+    color: white;
+    background:#2b3743;
+    -webkit-box-shadow: 0px 3px 0px 1px rgba(29,42,51,1);
+    -moz-box-shadow: 0px 3px 0px 1px rgba(29,42,51,1);
+    box-shadow: 0px 3px 0px 1px rgba(29,42,51,1);
+    & .themeToggle{
+        color: white;
+        background:#2b3743;
+        svg{
+            &:first-of-type{
+                display: none;
+            }
+            &:last-of-type{
+                color: white;
+                display: initial;
+            }
+        }
+    }
+}
+
+.Navbar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;  
+    -webkit-box-shadow: 0px 1px 0px 1px rgba(194,194,194,0.43);
+    -moz-box-shadow: 0px 1px 0px 1px rgba(194,194,194,0.43);
+    box-shadow: 0px 1px 0px 1px rgba(194,194,194,0.43);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &.dark{
+        @include darkNavbar;
+    }
+    @media screen and (max-width:700px){
+        .logo{
+            margin-left:50px;
+            font-size:1.25rem;
+        }
+        .themeToggle{
+            margin-right:50px;
+            font-size:1rem;
+        }
+    }
+    @media screen and (max-width:475px){
+        .logo{
+            margin-left:25px;
+            font-size:1rem;
+        }
+        .themeToggle{
+            margin-right:25px;
+            font-size:0.813rem;
+        }
+    }
+    @media screen and (max-width:320px){
+        .logo{
+            margin-left:15px;
+            font-size:.8rem;
+        }
+        .themeToggle{
+            margin-right:15px;
+            font-size:.75rem;
+            & button{
+                font-size:.938rem;
+                margin-right:2px;
+                margin-bottom:2.5px;
+            }
+        }
+    }
+}

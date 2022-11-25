@@ -1,0 +1,9 @@
+.CountryCont{
+    margin: 50px;
+    display: flex;
+    @media screen and (max-width:1130px) {
+        margin:25px;
+        flex-direction:column;
+        align-items: center;
+    }
+}

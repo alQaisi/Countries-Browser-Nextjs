@@ -1,0 +1,68 @@
+@mixin dark {
+    box-shadow:none;
+    background:hsl(209, 23%, 22%);
+    color:#ddd;
+}
+
+.CountryImage{
+    width: 340px;
+    height:200px;
+    & img{
+        object-fit: cover !important;
+    }
+    @media screen and (max-width:879px) {
+        height:fit-content;
+        & img{
+            all: unset !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+    @media screen and (max-width:450px) {
+        width: 235px;
+        height: unset;
+        & img{
+            width: 235px !important;
+        }
+    }
+}
+
+.InfoContainer{
+    margin: 8px 0 25px 25px;
+    & p{
+        margin-top:0px;
+        max-width:310px;
+        word-wrap: break-word;
+    }
+    & p:first-of-type{
+        font-size:1.5rem;
+        font-weight:600;
+    }
+}
+.LinkWrapper{
+    all:unset;
+    margin:40px 50px;
+    @media screen and (max-width:450px) {
+        margin: 40px 15px;
+    }
+}
+.card{
+    width: fit-content;
+    z-index: 100;
+    display: inline-block;
+    -webkit-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    -moz-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    border-radius:8px;
+    transition: background .15s ease-in-out;
+    cursor: pointer; 
+    overflow: hidden;
+    &.dark{
+        @include dark();
+    }
+    @media screen and (max-width:450px) {
+        & p{
+            max-width: 210px;
+        }  
+    }
+}

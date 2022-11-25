@@ -1,0 +1,27 @@
+.infoCont{
+    display: flex;
+    @media screen and (max-width:700px){
+        flex-direction: column;
+    }
+}
+.CountryInfo{
+    margin-left:175px;
+    & h1{
+        font-size:3rem;
+    }
+    @media screen and (max-width:1500px){
+        margin-left: 50px;
+    }
+    @media screen and (max-width:1370px){
+        margin-left: 40px;
+    }
+    @media screen and (max-width:700px){
+        align-self: flex-start;
+        margin-left: 0px;
+    }
+    @media screen and (max-width:360px){
+        h1{
+            font-size:2.5rem;
+        }
+    }
+}

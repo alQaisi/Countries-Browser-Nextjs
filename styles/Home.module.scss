@@ -1,0 +1,20 @@
+.container{
+    height:100%;
+    min-height: 100vh;
+    &.dark{
+        background:hsl(207, 26%, 17%);
+    }
+}
+.warning{
+    text-align: center;
+    margin-top:75px;
+    font-weight: 600;
+    & > p{
+        margin-block-start:15px;
+        font-weight: 300;
+        font-size:1.25rem;
+    }
+    &.darkWarning{
+        color: #f5f5f5;
+    }
+}
