@@ -14,9 +14,6 @@ module.exports = withPWA({
     register: true,
     skipWaiting: true,
   },
-});
-
-module.exports = {
   images:{
     domains:["upload.wikimedia.org","flagcdn.com"]
   },
@@ -28,4 +25,4 @@ module.exports = {
     })
     return config
   },
-};
+});
