@@ -1,5 +1,3 @@
-const withPWA = require("next-pwa");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -8,12 +6,11 @@ const nextConfig = {
 
 module.exports = nextConfig
 
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
+
 module.exports = withPWA({
-  pwa: {
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-  },
   images:{
     domains:["upload.wikimedia.org","flagcdn.com"]
   },
