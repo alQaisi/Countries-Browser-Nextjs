@@ -8,7 +8,7 @@ type props=React.ComponentProps<"button"> & {
 const ThemeToggle:React.FC<props>=({children,className,onClick,...rest})=>{
     return (
         <span className={className} onClick={onClick}>
-            <button {...rest}>
+            <button id="theme-toggle" {...rest}>
                 <RiMoonLine/>
                 <MdLightMode/>
             </button>

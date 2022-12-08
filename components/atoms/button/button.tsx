@@ -3,9 +3,11 @@ import { cls } from "../../../lib/cls";
 
 type ButtonProps={
     type:"header" | "border"
-    className?:string,
+    className?:string
     onClick?:(event:React.MouseEvent<HTMLButtonElement>)=>void
     children:React.ReactNode
+    id?:string
+    "aria-label"?:string
 }
 
 const Button:React.FC<ButtonProps>=({type,children,className="",...rest})=>{
