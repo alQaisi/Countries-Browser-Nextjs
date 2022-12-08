@@ -1,14 +1,29 @@
 import { NextPage } from "next"
+import { useRouter } from 'next/router'
+import Image from "next/image";
 import { useThemeContext } from "../context/Theme.context";
 import styles from "../styles/Offline.module.scss";
 import homeStyles from "../styles/Home.module.scss";
 import { cls } from "../lib/cls";
-import Image from "next/image";
+import { HomeIcon,BackIcon } from "../components/atoms/BtnIcons";
+import BtnCont from "../components/molecules/ButtonContainer/BtnCont";
+import Button from "../components/atoms/button/button";
 
 const Offline:NextPage=()=>{
     const { theme }=useThemeContext();
+    const { push,back } = useRouter()
     return  (
         <div className={cls(homeStyles.container,{[homeStyles["dark"]]:theme==="dark"},styles.offline)}>
+            <div className={cls(styles.header,{[styles["dark"]]:theme==="dark"})}>
+                <BtnCont onClick={back} type="header" theme={theme}>
+                    <BackIcon/>
+                    <Button type="header">Back</Button>
+                </BtnCont>
+                <BtnCont onClick={()=>push("/")} type="header" theme={theme}>
+                    <HomeIcon/>
+                    <Button type="header" >Home</Button>
+                </BtnCont>
+            </div>
             <div className={styles.svgWrapper}>
                 <div className={styles.ratio}/>
                 {

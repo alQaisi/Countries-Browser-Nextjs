@@ -3,8 +3,7 @@
     text-align: center;  
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap:10px;
+    justify-content:flex-start;
     & h1{
         margin-block-start: 0;
         position: relative;
@@ -13,27 +12,6 @@
             color:rgb(242, 242, 242);
         }
     }
-    .svg{
-        cursor: initial;
-        &.darkSvg{
-            cursor: initial;
-            & path{
-                fill: rgb(242, 242, 242);
-                &:first-of-type{
-                    display: none;
-                }
-                &:nth-last-of-type(-n+2){
-                    fill: none;
-                }
-
-            }
-            & path:first-of-type{
-            }
-            & path{
-                fill: rgb(242, 242, 242);
-            }
-        }
-    }  
 }
 .svgWrapper{
     position: relative;
@@ -43,4 +21,16 @@
     .ratio{
         padding-top: 74.279%;
     }
+}
+.header{
+    &.dark{
+        & *{
+            color: #f2f2f2;
+        }
+    }
+    & > *{
+        margin-bottom: 0 !important;
+        margin-top:35px !important;
+    }
+    text-align: left;
 }
