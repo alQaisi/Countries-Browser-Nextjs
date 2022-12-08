@@ -1,6 +1,7 @@
 import { NextPage } from "next"
 import { useRouter } from 'next/router'
 import Image from "next/image";
+import Head from 'next/head';
 import { useThemeContext } from "../context/Theme.context";
 import styles from "../styles/Offline.module.scss";
 import homeStyles from "../styles/Home.module.scss";
@@ -14,6 +15,9 @@ const Offline:NextPage=()=>{
     const { push,back } = useRouter()
     return  (
         <div className={cls(homeStyles.container,{[homeStyles["dark"]]:theme==="dark"},styles.offline)}>
+            <Head>
+                <title>Country Browser | Offline</title>
+            </Head>
             <div className={cls(styles.header,{[styles["dark"]]:theme==="dark"})}>
                 <BtnCont onClick={back} type="header" theme={theme}>
                     <BackIcon/>
