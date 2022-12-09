@@ -8,6 +8,15 @@
         color: #f5f5f5;
     }
 }
+.svgWrapper{
+    position: relative;
+    width:100%;
+    max-width:1050px;
+    margin: 0 auto;
+    .ratio{
+        padding-top: 74.279%;
+    }
+}
 .warning{
     text-align: center;
     margin-top:75px;

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import Navbar from '../components/molecules/Navbar/Navbar'
 import Filter from '../components/molecules/Filter/Filter'
@@ -38,7 +39,7 @@ type HomeProps={
 
 const Home:NextPage<HomeProps>=({countries,notFound})=>{
 
-  const {isLoading,setCountries,localCountries,continentsCountries,continent}=useCountriesContext();
+  const {isLoading,isError,setCountries,localCountries,continentsCountries,continent}=useCountriesContext();
 
   const { theme }=useThemeContext();
 
@@ -57,12 +58,23 @@ const Home:NextPage<HomeProps>=({countries,notFound})=>{
       <Navbar/>
       <Filter/>
       <ScrollArrow/>
-      { 
-        isLoading
-        ?<Loader theme={theme}/>
-        :(!!countries.length && <CountriesContainer countries={countriesToRender}/>)
+      {
+        isError && 
+          <div className={styles.svgWrapper}>
+                <div className={styles.ratio}/>
+                {
+                    theme==="dark"
+                    ?<Image src="/assets/DarkNetwork.svg" fill alt="network error"/>
+                    :<Image src="/assets/MainNetwork.svg" fill alt="network error"/>
+                }
+          </div>
       }
-      { (notFound && !isLoading) && <h2 className={cls(styles.warning,{[styles.darkWarning]:theme==="dark"})}>There is something wrong! <p>please try again later</p></h2> }
+      { 
+        !isError && (isLoading
+        ?<Loader theme={theme}/>
+        :(!!countries.length && <CountriesContainer countries={countriesToRender}/>))
+      }
+      {/* { (notFound || isError) && <h2 className={cls(styles.warning,{[styles.darkWarning]:theme==="dark"})}>There is something wrong! <p>please try again later</p></h2> } */}
     </div>
   );
 }
