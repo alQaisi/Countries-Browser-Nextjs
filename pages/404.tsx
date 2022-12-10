@@ -11,6 +11,9 @@ const NotFoundPage:NextPage=()=>{
     const { theme }=useThemeContext();
     return (
         <div className={cls(styles.Error,{[styles["dark"]]:theme==="dark"})}>
+            <Head>
+                <title>Countries Browser | 404 Not found</title>
+            </Head>
             <Link href="/"><button>Go to Home</button></Link>
             <div className={styles.svgWrapper}>
                 <div className={styles.ratio}/>
